@@ -1,12 +1,14 @@
-name: Create Tag Workflow
+name: Workflow in Repo1
 
 on:
   workflow_dispatch:
-   
 
 jobs:
-  notify:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Tag Detected
-        run: echo "Tag created"
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run some build steps
+        run: echo "Build and tests completed successfully"
