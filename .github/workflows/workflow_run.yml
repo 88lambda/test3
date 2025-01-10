@@ -1,0 +1,13 @@
+name: Create Tag Workflow
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Tag Detected
+        run: echo "Tag created"
