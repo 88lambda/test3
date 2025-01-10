@@ -1,7 +1,9 @@
 name: Workflow in Repo1
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -10,5 +12,5 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run some build steps
-        run: echo "Build and tests completed successfully"
+      - name: Run build steps
+        run: echo "First repo workflow completed successfully"
