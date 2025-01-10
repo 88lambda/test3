@@ -1,9 +1,8 @@
 name: Create Tag Workflow
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
+   
 
 jobs:
   notify:
