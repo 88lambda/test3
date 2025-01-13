@@ -9,12 +9,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: trigger
-        run: |
-          echo "doing some stuff..."
+        
+      - name: Trigger Repo B Workflow
+        uses: peter-evans/repository-dispatch@v3
+        with:
           repository: 88lambda/test3
           token: ${{ secrets.TOKEN }}
           event-type: trigger-workflow
           client-payload: '{"ref": "${{ github.ref }}"}'
-          echo "stuff done"
+          
+      - name: trigger
+        run: |
+          echo "doing some stuff..."
