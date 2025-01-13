@@ -13,7 +13,7 @@ jobs:
       - name: Trigger Repo B Workflow
         uses: peter-evans/repository-dispatch@v3
         with:
-          repository: 88lambda/test3
+          repository: 88lambda/test
           token: ${{ secrets.TOKEN }}
           event-type: trigger-workflow
           client-payload: '{"ref": "${{ github.ref }}"}'
