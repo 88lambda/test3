@@ -10,5 +10,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run build steps
-        run: echo "First repo workflow completed successfully"
+      - name: trigger
+        run: |
+          echo "doing some stuff..."
+          repository: 88lambda/test3
+          token: ${{ secrets.TOKEN }}
+          event-type: trigger-workflow
+          client-payload: '{"ref": "${{ github.ref }}"}'
+          echo "stuff done"
